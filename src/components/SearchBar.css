@@ -1,0 +1,9 @@
+input.search {
+    margin: 10px;
+    width: 25vw;
+    height: 1.5vw;
+    font-size: 1.1vw;
+    box-shadow: 0.3vw 0.5vw;
+    border-radius: 5vw;
+    margin : 10px 5px;
+}
