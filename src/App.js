@@ -1,5 +1,5 @@
 import './App.css';
-import SearchGui from './components/SearchGui';
+import SearchGui from './components/SearchInput';
 
 function App() {
   return (
