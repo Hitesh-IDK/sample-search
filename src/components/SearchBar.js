@@ -4,12 +4,12 @@ import React, {useState} from 'react';
 const SearchBar = () => {
 
     const [searchInput, setSearchInput] = useState('');
-    const inputHandler = () => {
-        
+    const inputHandler = (event) => {
+        setSearchInput(event.target.value);
     }
  
     return (
-        <input className="search" type="text" onChange={inputHandler} />
+        <input className="search" type="text" onChange={inputHandler} value={searchInput} />
     );
 }
 
