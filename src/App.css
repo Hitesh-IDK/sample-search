@@ -1,12 +1,7 @@
 .App {
-}
-
-.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-}
-
-.App-link {
-  color: #61dafb;
+  flex-direction: column;
+  align-content: center;
 }
