@@ -1,9 +1,17 @@
+input.search__mini {
+    width: 25%;
+    height: 1.5vw;
+    font-size: 1.3vw;
+    box-shadow: 0.2vw 0.2vw;
+    border-radius: 5vw;
+    margin : 15px 5px 5px 15px;
+}
+
 input.search {
-    margin: 10px;
+    align-items: center;
     width: 25vw;
     height: 1.5vw;
     font-size: 1.3vw;
     box-shadow: 0.3vw 0.5vw;
     border-radius: 5vw;
-    margin : 10px 5px;
 }
