@@ -1,11 +1,18 @@
-import Card from "../UI/Card";
+import SearchItem from "./SearchItem";
+import './SearchPage.css';
 
-const SearchPage = () => {
+const SearchPage = (props) => {
+    const items = props.getItems();
+
+    console.log("Search Page : ");
+
     return (
-        <div>
-            <Card> 
-                <label>Search</label>
-            </Card>
+        <div className="search_page">
+            {typeof items[0] != 'undefined' && items.map(item => {
+                return (
+                    <SearchItem item={item} />
+                );
+            })}
         </div>
     );
 }

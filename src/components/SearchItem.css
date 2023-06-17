@@ -1,0 +1,64 @@
+div.search_name {
+  font-size: 150%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  min-width: 1vw;
+}
+
+div.search_url {
+  font-size: 80%;
+  color: wheat;
+}
+
+div.search_title {
+  font-weight: 450;
+  margin: 0.8vw 0px 0px 0px;
+  font-size: 120%;
+}
+
+div.search_snippet {
+  flex-wrap: wrap;
+  max-width: 70%;
+  font-size: 80%;
+}
+
+a:link {
+  color: rgb(31, 223, 223);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: palevioletred;
+}
+
+div.item_container {
+  margin: 0px 0px 4vh 2vw;
+}
+
+a.search_name__link:link {
+  color: white;
+}
+
+a.search_url__link:link {
+  color: wheat;
+}
+
+a.search_name__link:hover {
+    text-decoration: none;
+}
+
+a.search_url__link:hover {
+    text-decoration: none;
+}
+
+a.search_name__link:visited {
+    color: white;
+}
+
+a.search_url__link:visited {
+    color: wheat;
+}

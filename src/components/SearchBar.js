@@ -14,6 +14,7 @@ const SearchBar = (props) => {
     const searchHandler = (event) => {
         if(event.key === 'Enter') {
             props.getStatus(true);
+            props.setQuery(searchInput);
         }
     }
  
