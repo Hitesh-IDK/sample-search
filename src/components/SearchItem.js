@@ -14,7 +14,9 @@ const SearchItem = (props) => {
     }
 
     name = name.slice(1);
-    console.log(name);
+    if (name.length > 35) {
+        name = name.slice(0, 35).concat('...');
+    }
 
     return (
         <div className='item_container'>

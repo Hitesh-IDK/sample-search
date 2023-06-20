@@ -53,6 +53,31 @@ div.search_container__title {
     height: 5vh;
 }
 
+.search_bar__container {
+  background-color: rgb(245, 243, 243, 0.7);
+  margin-left: 1vw;
+  display: flex;
+  height: 4vh;
+  align-items: center;
+  align-content: center;
+  width: 47vw;
+  border-radius: 13px;
+  border : 1px solid black;
+}
+
+.search_bar__container__mini {
+  background-color: rgb(245, 243, 243, 0.7);
+  margin-left: 1vw;
+  display: flex;
+  height: 4vh;
+  align-items: center;
+  align-content: center;
+  width: 47vw;
+  border-radius: 13px;
+  border : 1px solid black;
+  margin-top: 1.5vh;
+}
+
 .search_button__next {
     width: 4vw;
     height: 2.5vh;
@@ -65,4 +90,12 @@ div.search_container__title {
     height: 2.5vh;
     text-align: center;
     margin-right: 1vw;
+}
+
+.search_img {
+  margin-left: 1vw;
+  width: 35px;
+  height: 40px;
+  padding-right: 0.7vw;
+  border-right: 1px solid rgb(44, 43, 43);
 }

@@ -1,17 +1,29 @@
 input.search__mini {
-    width: 40vw;
+    width: 38vw;
     height: 3vh;
     font-size: 2vh;
-    box-shadow: 0.2vw 0.2vw;
-    border-radius: 5vw;
-    margin : 15px 5px 5px 15px;
+    margin : 0px 0px 0px 15px;
+    background-color: transparent;
+    border: none;
 }
 
 input.search {
     align-items: center;
-    width: 30vw;
+    width: 40vw;
     height: 3vh;
-    font-size: 2.4vh;
-    box-shadow: 0.3vw 0.5vw;
-    border-radius: 5vw;
+    font-size: 2vh;
+    background-color: transparent;
+    margin-left: 0.8vw;
+    margin-top: 0.1vh;
+    border: none;
+}
+
+input.search:focus {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+input.search:active {
+    border: none;
+    background-color: transparent;
 }
