@@ -85,73 +85,104 @@ const SearchGui = () => {
         });
     }
 
-    const nextApiRequest = () => {
-        if (typeof currentData !== "undefined") {
-            if (currentData.nextPage) {
-                currentData.startNum += 10;
+    // const nextApiRequest = () => {
+    //     if (typeof currentData !== "undefined") {
+    //         if (currentData.nextPage) {
+    //             currentData.startNum += 10;
 
-                const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
 
-                fetch(requestUrl).then(response => {
-                    return response.json();
-                }).then(data => {
-                    const nextExists = (typeof data.queries !== 'undefined') ? true : false;
-                    setCurrentData((prevData) => {
-                        return (
-                            {
-                                ...prevData,
-                                items: data.items,
-                                searchInformation: {
-                                    searchTime: data.searchInformation.searchTime,
-                                    totalResults: data.searchInformation.totalResults
-                                },
-                                nextPage: nextExists
-                            }
-                        );
-                    });
-                })
-            }
-        }
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
+    //             fetch(requestUrl).then(response => {
+    //                 return response.json();
+    //             }).then(data => {
+    //                 const nextExists = (typeof data.queries !== 'undefined') ? true : false;
 
-    const prevApiRequest = () => {
-        if (typeof currentData !== "undefined") {
-            if (currentData.startNum > 10) {
-                currentData.startNum -= 10;
+    //                 setCurrentData((prevData) => {
+    //                     return (
+    //                         {
+    //                             ...prevData,
+    //                             items: data.items,
+    //                             searchInformation: {
+    //                                 searchTime: data.searchInformation.searchTime,
+    //                                 totalResults: data.searchInformation.totalResults
+    //                             },
+    //                             nextPage: nextExists
+    //                         }
+    //                     );
+    //                 });
+    //             })
+    //         }
+    //     }   
+    //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // }
 
-                const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+    // const prevApiRequest = () => {
+    //     if (typeof currentData !== "undefined") {
+    //         if (currentData.startNum > 10) {
+    //             currentData.startNum -= 10;
 
-                fetch(requestUrl).then(response => {
-                    return response.json();
-                }).then(data => {
-                    setCurrentData((prevData) => {
-                        return (
-                            {
-                                ...prevData,
-                                items: data.items,
-                                searchInformation: {
-                                    searchTime: data.searchInformation.searchTime,
-                                    totalResults: data.searchInformation.totalResults
-                                }
-                            }
-                        );
-                    });
-                })
-            }
-        }
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
+    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+
+    //             fetch(requestUrl).then(response => {
+    //                 return response.json();
+    //             }).then(data => {
+    //                 setCurrentData((prevData) => {
+    //                     return (
+    //                         {
+    //                             ...prevData,
+    //                             items: data.items,
+    //                             searchInformation: {
+    //                                 searchTime: data.searchInformation.searchTime,
+    //                                 totalResults: data.searchInformation.totalResults
+    //                             }
+    //                         }
+    //                     );
+    //                 });
+    //             })
+    //         }
+    //     }
+    //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // }
 
     const handleScroll = (event) => {
         const target = event.target;
 
-        console.log('In handleScroll');
-        console.log(target.clientHeight);
-
-
         if(target.scrollHeight - target.scrollTop === target.clientHeight) {
-            console.log("Bottom");
+            if (typeof currentData !== "undefined") {
+                if (currentData.nextPage) {
+                    currentData.startNum += 10;
+    
+                    const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+    
+                    fetch(requestUrl).then(response => {
+                        return response.json();
+                    }).then(data => {
+                        const nextExists = (typeof data.queries !== 'undefined') ? true : false;
+                        const newItems = data.items.map((item) => {
+                            return {
+                                ...item,
+                                key : Math.random(100000)
+                            }
+                        })
+
+                        setCurrentData((prevData) => {
+                            return (
+                                {
+                                    ...prevData,
+                                    items: [
+                                        ...prevData.items,
+                                        ...newItems],
+                                    searchInformation: {
+                                        searchTime: data.searchInformation.searchTime,
+                                        totalResults: data.searchInformation.totalResults
+                                    },
+                                    nextPage: nextExists
+                                }
+                            );
+                        });
+                    })
+                }
+            }
         }
     }
 
@@ -165,10 +196,10 @@ const SearchGui = () => {
                 </div>
             </div>
             {submitStatus && resultsExist && <SearchPage getItems={transferItems} />}
-            {submitStatus && resultsExist && <div className="search_button__container">
+            {/* {submitStatus && resultsExist && <div className="search_button__container">
                 <button onClick={prevApiRequest} className="search_button__prev"> Prev </button>
                 <button onClick={nextApiRequest} className="search_button__next"> Next </button>
-            </div>}
+            </div>} */}
 
             {submitStatus && !resultsExist && <NoSearch />}
         </div>
