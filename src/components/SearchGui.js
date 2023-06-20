@@ -148,8 +148,9 @@ const SearchGui = () => {
         const target = event.target;
 
         if(target.scrollHeight - target.scrollTop === target.clientHeight) {
+            console.log(currentData.startNum);
             if (typeof currentData !== "undefined") {
-                if (currentData.nextPage) {
+                if (currentData.nextPage && currentData.startNum < 91) {
                     currentData.startNum += 10;
     
                     const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.Api_Key}&cx=${ApiConfig.CX}&start=${currentData.startNum}&q=${currentData.query}`;
@@ -157,6 +158,7 @@ const SearchGui = () => {
                     fetch(requestUrl).then(response => {
                         return response.json();
                     }).then(data => {
+                        console.log(data);
                         const nextExists = (typeof data.queries !== 'undefined') ? true : false;
                         const newItems = data.items.map((item) => {
                             return {
