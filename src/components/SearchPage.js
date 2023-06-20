@@ -3,7 +3,6 @@ import './SearchPage.css';
 
 const SearchPage = (props) => {
     const items = props.getItems();
-    console.log(items);
     
     return (
         <div className="search_page" >
