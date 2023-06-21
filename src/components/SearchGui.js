@@ -197,11 +197,7 @@ const SearchGui = () => {
                     <SearchBar className="searchBar" getStatus={getSubmitStatus} isSubmitted={submitStatus} setQuery={getQueryHandler} />
                 </div>
             </div>
-            {submitStatus && resultsExist && <SearchPage getItems={transferItems} />}
-            {/* {submitStatus && resultsExist && <div className="search_button__container">
-                <button onClick={prevApiRequest} className="search_button__prev"> Prev </button>
-                <button onClick={nextApiRequest} className="search_button__next"> Next </button>
-            </div>} */}
+            {submitStatus && resultsExist && <SearchPage getItems={transferItems} />}   
 
             {submitStatus && !resultsExist && <NoSearch />}
         </div>
