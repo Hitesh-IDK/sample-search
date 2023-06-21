@@ -33,11 +33,11 @@ input.search__mini {
 
 input.search {
     align-items: center;
-    width: 80%;
+    width: 85%;
     height: 3vh;
     font-size: 2vh;
     background-color: transparent;
-    margin-left: 0.8vw;
+    margin-left: 0.3vw;
     margin-top: 0.1vh;
     border: none;
 }
