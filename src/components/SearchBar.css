@@ -1,15 +1,39 @@
+/*For computers*/
+@media only screen and (min-width: 786px) {
+    input.search__mini {
+        width: 38vw;
+        height: 3vh;
+        font-size: 2vh;
+        margin : 0px 0px 0px 15px;
+        background-color: transparent;
+        border: none;
+    }
+    
+    input.search {
+        align-items: center;
+        width: 40vw;
+        height: 3vh;
+        font-size: 2vh;
+        background-color: transparent;
+        margin-left: 0.8vw;
+        margin-top: 0.1vh;
+        border: none;
+    }
+}
+
+/*for phone*/
 input.search__mini {
-    width: 38vw;
+    width: 70%;
     height: 3vh;
     font-size: 2vh;
-    margin : 0px 0px 0px 15px;
+    margin : 0px 0px 0px 5px;
     background-color: transparent;
     border: none;
 }
 
 input.search {
     align-items: center;
-    width: 40vw;
+    width: 80%;
     height: 3vh;
     font-size: 2vh;
     background-color: transparent;
@@ -19,11 +43,9 @@ input.search {
 }
 
 input.search:focus {
-    border: none !important;
-    background-color: transparent !important;
+    outline: none !important;
 }
 
-input.search:active {
-    border: none;
-    background-color: transparent;
+input.search__mini:focus {
+    outline: none !important;
 }
