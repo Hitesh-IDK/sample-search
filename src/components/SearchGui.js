@@ -2,7 +2,6 @@ import SearchBar from "./SearchBar";
 import React, { useState } from 'react';
 import "./SearchGui.css";
 // import ApiConfig from "./ApiConfig";
-import ApiConfig from "./ApiConfig.env";
 import SearchPage from "./SearchPage";
 import NoSearch from "./NoSearch";
 
@@ -34,9 +33,11 @@ const SearchGui = () => {
         return currentData.items;
     }
 
+    console.log(process.env.Api_Key);
+
     const apiRequest = (query) => {
         //Api config is a dictonary with API KEY and CX ID
-        const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.env.Api_Key}&cx=${ApiConfig.env.CX}&start=${currentData.startNum}&q=${query}`;
+        const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=${process.env.REACT_APP_CX}&start=${currentData.startNum}&q=${query}`;
 
         fetch(requestUrl).then(response => {
             return response.json();
@@ -91,7 +92,7 @@ const SearchGui = () => {
     //         if (currentData.nextPage) {
     //             currentData.startNum += 10;
 
-    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.env.Api_Key}&cx=${ApiConfig.env.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=${process.env.CX}&start=${currentData.startNum}&q=${currentData.query}`;
 
     //             fetch(requestUrl).then(response => {
     //                 return response.json();
@@ -122,7 +123,7 @@ const SearchGui = () => {
     //         if (currentData.startNum > 10) {
     //             currentData.startNum -= 10;
 
-    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.env.Api_Key}&cx=${ApiConfig.env.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+    //             const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=${process.env.CX}&start=${currentData.startNum}&q=${currentData.query}`;
 
     //             fetch(requestUrl).then(response => {
     //                 return response.json();
@@ -154,7 +155,7 @@ const SearchGui = () => {
                 if (currentData.nextPage && currentData.startNum < 91) {
                     currentData.startNum += 10;
     
-                    const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${ApiConfig.env.Api_Key}&cx=${ApiConfig.env.CX}&start=${currentData.startNum}&q=${currentData.query}`;
+                    const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=${process.env.REACT_APP_CX}&start=${currentData.startNum}&q=${currentData.query}`;
     
                     fetch(requestUrl).then(response => {
                         return response.json();
