@@ -39,8 +39,11 @@ div.search_name {
 }
 
 div.search_url {
+  display:flex;
   font-size: 80%;
   color: wheat;
+  width: 90%;
+  flex-wrap: wrap;
 }
 
 div.search_title {
@@ -71,6 +74,11 @@ a:hover {
 
 a:visited {
   color: palevioletred;
+}
+
+.search_url__link {
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 a.search_name__link:link {

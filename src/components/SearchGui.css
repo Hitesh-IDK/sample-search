@@ -84,6 +84,16 @@ label {
 }
 
 /* phone displays*/
+.loading {
+  display: flex;
+  color: rgb(231, 235, 224);
+  font-size: 150%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 40vh;
+}
+
 label.search {
   font-size: 350%;
   font-weight: 600;
@@ -156,7 +166,7 @@ div.search_container__title {
 
 .search_img {
   margin-left: 1vw;
-  width: 35px;
+  width: 40px;
   height: 40px;
   padding-right: 0.7vw;
   border-right: 1px solid rgb(44, 43, 43);
