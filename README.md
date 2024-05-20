@@ -1,4 +1,4 @@
-# Search API
+# Search UI
 
 A Simple interface to interact with the google search api without any filters and restrictions on the typical public search. A project to improve my understandings in API's and their integration. 
 
